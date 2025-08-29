@@ -1,3 +1,4 @@
+/* Global Reset and Base */
 html, body, #root {
   height: 100%;
   margin: 0;
@@ -5,114 +6,151 @@ html, body, #root {
   overflow: hidden;
 }
 
+/* Main Container */
 .container {
   display: flex;
   height: 100vh;
-  background: #000000;
+  background: #0a0a0a; /* Darker black for more realistic look */
   color: #00ff00;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
   font-size: 14px;
+  line-height: 1.4;
 }
 
+/* Left Panel - Enhanced */
 .leftPanel {
-  width: 400px;
-  min-width: 400px;
-  padding: 30px;
-  background: #000000;
+  width: 420px;
+  min-width: 420px;
+  padding: 25px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-right: 1px solid #333333;
+  border-right: 2px solid #1a1a1a;
+  box-shadow: inset -5px 0 15px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 
+/* Header Section */
 .header {
-  margin-bottom: 40px;
+  margin-bottom: 35px;
+  text-align: left;
 }
 
 .name {
   color: #00ff00;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   margin: 0;
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  text-shadow: 0 0 15px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.3);
+  letter-spacing: -1px;
 }
 
 .title {
-  color: #808080;
-  font-size: 1rem;
+  color: #888888;
+  font-size: 1.1rem;
   margin: 8px 0 0 0;
   font-weight: 300;
+  opacity: 0.8;
 }
 
+/* Profile Section - More Realistic */
 .profileSection {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 25px;
 }
 
 .terminalWindow {
   background: #1a1a1a;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  border: 1px solid #333;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid #333333;
+  overflow: hidden;
 }
 
 .windowHeader {
-  background: #2d2d2d;
-  padding: 8px 12px;
-  border-radius: 8px 8px 0 0;
+  background: linear-gradient(180deg, #3d3d3d 0%, #2d2d2d 100%);
+  padding: 12px 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  border-bottom: 1px solid #444;
+  gap: 12px;
+  border-bottom: 1px solid #555555;
 }
 
 .windowButtons {
   display: flex;
-  gap: 6px;
+  gap: 8px;
 }
 
 .closeBtn, .minimizeBtn, .maximizeBtn {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
 }
 
-.closeBtn { background: #ff5f56; }
-.minimizeBtn { background: #ffbd2e; }
-.maximizeBtn { background: #27ca3f; }
+.closeBtn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+  box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+}
+
+.minimizeBtn {
+  background: linear-gradient(135deg, #ffd93d 0%, #ffb300 100%);
+  box-shadow: 0 2px 4px rgba(255, 217, 61, 0.3);
+}
+
+.maximizeBtn {
+  background: linear-gradient(135deg, #6bcf7f 0%, #4caf50 100%);
+  box-shadow: 0 2px 4px rgba(107, 207, 127, 0.3);
+}
+
+.closeBtn:hover, .minimizeBtn:hover, .maximizeBtn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
 
 .windowTitle {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
 .profileImageContainer {
-  padding: 40px;
+  padding: 35px;
   display: flex;
   justify-content: center;
 }
 
 .profileImage {
-  width: 200px;
-  height: 250px;
-  background: #2d2d2d;
-  border-radius: 8px;
+  width: 220px;
+  height: 270px;
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #444;
+  border: 2px solid #444444;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .avatarPlaceholder {
   color: #00ff00;
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .interactiveCard {
@@ -123,25 +161,40 @@ html, body, #root {
 .cardLabel {
   color: #00ff00;
   font-size: 14px;
-  padding: 8px 16px;
-  border: 1px solid #00ff00;
-  border-radius: 4px;
-  background: rgba(0, 255, 0, 0.1);
+  font-weight: 500;
+  padding: 10px 18px;
+  border: 2px solid #00ff00;
+  border-radius: 6px;
+  background: rgba(0, 255, 0, 0.05);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 0, 0.2),
+    inset 0 1px 0 rgba(0, 255, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
+.cardLabel:hover {
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Right Panel - Terminal Area */
 .rightPanel {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #000000;
+  background: #0a0a0a;
   overflow: hidden;
 }
 
+/* Command Navigation Bar */
 .commandNavigation {
-  padding: 15px 20px;
-  border-bottom: 1px solid #333333;
-  background: #000000;
+  padding: 16px 24px;
+  border-bottom: 2px solid #1a1a1a;
+  background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%);
   flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .navCommands {
@@ -150,44 +203,58 @@ html, body, #root {
   line-height: 1.6;
   display: flex;
   flex-wrap: wrap;
+  gap: 2px;
+  font-weight: 500;
 }
 
 .navLink {
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  padding: 2px 4px;
+  border-radius: 3px;
 }
 
 .navLink:hover {
   color: #ffffff;
-  text-shadow: 0 0 5px #00ff00;
+  background: rgba(0, 255, 0, 0.1);
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+  transform: translateY(-1px);
 }
 
+/* Terminal Container - More Realistic */
 .terminalContainer {
   flex: 1;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background: #000000;
 }
 
 .terminal {
   flex: 1;
-  padding: 20px;
+  padding: 24px;
   overflow-y: auto;
   overflow-x: hidden;
   background: #000000;
-  border-top: 1px solid #333333;
+  border-top: 1px solid #1a1a1a;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
+/* Terminal Content */
 .terminalContent {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .terminalLine {
-  margin: 2px 0;
+  margin: 1px 0;
   line-height: 1.5;
   word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .prompt {
@@ -198,13 +265,16 @@ html, body, #root {
 .output {
   color: #ffffff;
   white-space: pre-wrap;
+  opacity: 0.95;
 }
 
+/* Input Line - Enhanced */
 .inputLine {
   display: flex;
   align-items: center;
-  margin-top: 0;
-  padding-top: 0;
+  margin-top: 8px;
+  padding-top: 4px;
+  min-height: 24px;
 }
 
 .currentPrompt {
@@ -212,86 +282,124 @@ html, body, #root {
   font-weight: 600;
   margin-right: 8px;
   flex-shrink: 0;
+  text-shadow: 0 0 5px rgba(74, 158, 255, 0.3);
 }
 
+/* Input Wrapper and Cursor */
+.inputWrapper {
+  position: relative;
+  display: inline-block;
+  flex: 1;
+  min-width: 0;
+}
+
+.inputDisplay {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre;
+  pointer-events: none;
+}
 
 .terminalInput {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background: transparent;
   border: none;
   outline: none;
-  color: #ffffff;
+  color: transparent;
+  caret-color: transparent;
   font-family: inherit;
   font-size: inherit;
-  flex: 1;
-  width: auto;
-  min-width: 1px;
-  caret-color: #ffffff;
-  caret-shape: block;
+  z-index: 1;
 }
 
-.inputWrapper {
-  display: inline-flex;
-  align-items: center;
-}
-
+/* Thick Block Cursor - Enhanced */
 .cursor {
-  color: #ffffff;
-  animation: blink 1s infinite;
+  display: inline-block;
+  width: 0.6em;
+  height: 1.2em;
+  background-color: #00ff00;
+  animation: fatBlink 1s infinite;
+  vertical-align: top;
+  margin: 0;
+  position: relative;
+  border-radius: 1px;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+@keyframes fatBlink {
+  0%, 50% {
+    opacity: 1;
+    background-color: #00ff00;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+  }
+  51%, 100% {
+    opacity: 0.2;
+    box-shadow: 0 0 4px rgba(0, 255, 0, 0.2);
+  }
 }
 
+/* Status Bar - Enhanced */
 .statusBar {
-  padding: 10px 20px;
-  border-top: 1px solid #333333;
-  background: #000000;
+  padding: 12px 24px;
+  border-top: 2px solid #1a1a1a;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
   text-align: right;
   flex-shrink: 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .timestamp {
   color: #00ff00;
   font-size: 12px;
+  font-weight: 500;
+  opacity: 0.8;
+  font-family: 'SF Mono', monospace;
 }
 
+/* Scrollbar Styling */
 .terminal::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .terminal::-webkit-scrollbar-track {
-  background: #000000;
+  background: #0a0a0a;
 }
 
 .terminal::-webkit-scrollbar-thumb {
   background: #333333;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .terminal::-webkit-scrollbar-thumb:hover {
   background: #555555;
 }
 
-@media (max-width: 1024px) {
+/* Responsive Design */
+@media (max-width: 1200px) {
   .leftPanel {
-    width: 300px;
-    min-width: 300px;
+    width: 350px;
+    min-width: 350px;
     padding: 20px;
   }
   
   .profileImage {
-    width: 150px;
-    height: 200px;
+    width: 180px;
+    height: 220px;
   }
   
   .name {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .container {
     flex-direction: column;
   }
@@ -299,36 +407,64 @@ html, body, #root {
   .leftPanel {
     width: 100%;
     min-width: unset;
-    height: 40vh;
-    padding: 15px;
+    height: 45vh;
+    padding: 20px;
     border-right: none;
-    border-bottom: 1px solid #333333;
+    border-bottom: 2px solid #1a1a1a;
   }
   
   .profileSection {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    gap: 20px;
   }
   
   .profileImage {
-    width: 120px;
-    height: 150px;
+    width: 140px;
+    height: 180px;
   }
   
   .avatarPlaceholder {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
   
   .name {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   
   .navCommands {
-    font-size: 11px;
+    font-size: 12px;
   }
   
   .terminal {
-    padding: 15px;
+    padding: 18px;
+  }
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(0, 255, 0, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(0, 255, 0, 0.3);
+  color: #ffffff;
+}
+
+/* Subtle animations */
+.terminalLine {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
